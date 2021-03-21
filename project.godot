@@ -1,0 +1,88 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://src/GameLayer/Objects/Bullet.gd"
+}, {
+"base": "RigidBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://src/GameLayer/Actors/SpriteActors/EnemyRigidBody.gd"
+}, {
+"base": "CanvasLayer",
+"class": "GameOver",
+"language": "GDScript",
+"path": "res://src/InterfaceLayer/HUD/GameOver.gd"
+}, {
+"base": "",
+"class": "GitAPI",
+"language": "NativeScript",
+"path": "res://git_api.gdns"
+}, {
+"base": "Position2D",
+"class": "Gun",
+"language": "GDScript",
+"path": "res://src/GameLayer/Actors/SpriteActors/Gun.gd"
+}, {
+"base": "CanvasLayer",
+"class": "HUD",
+"language": "GDScript",
+"path": "res://src/InterfaceLayer/HUD/HUD.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/GameLayer/Actors/SpriteActors/Player.gd"
+}, {
+"base": "Reference",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://src/GameLayer/Objects/Weapon.gd"
+} ]
+_global_script_class_icons={
+"Bullet": "",
+"Enemy": "",
+"GameOver": "",
+"GitAPI": "",
+"Gun": "",
+"HUD": "",
+"Player": "",
+"Weapon": ""
+}
+
+[application]
+
+config/name="The Summer Bullet"
+run/main_scene="res://src/main/MainScene.tscn"
+config/icon="res://res/icon.png"
+
+[gdnative]
+
+singletons=[ "res://git_api.gdnlib" ]
+
+[input]
+
+ui_shoot={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+quality/2d/use_pixel_snap=true
+environment/default_environment="res://res/default_env.tres"
