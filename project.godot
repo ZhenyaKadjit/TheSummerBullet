@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "RigidBody2D",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://src/GameLayer/Actors/SpriteActors/EnemyRigidBody.gd"
+"path": "res://src/GameLayer/Actors/EnemyRigidBody.gd"
 }, {
 "base": "CanvasLayer",
 "class": "GameOver",
@@ -32,7 +32,7 @@ _global_script_classes=[ {
 "base": "Position2D",
 "class": "Gun",
 "language": "GDScript",
-"path": "res://src/GameLayer/Actors/SpriteActors/Gun.gd"
+"path": "res://src/GameLayer/Actors/Gun.gd"
 }, {
 "base": "CanvasLayer",
 "class": "HUD",
@@ -42,7 +42,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://src/GameLayer/Actors/SpriteActors/Player.gd"
+"path": "res://src/GameLayer/Actors/Player.gd"
 }, {
 "base": "Reference",
 "class": "Weapon",

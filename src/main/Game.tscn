@@ -1,18 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://src/GameLayer/Actors/SpriteActors/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/GameLayer/Actors/SpriteActors/EnemyRigidBody.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/GameLayer/Actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/GameLayer/Actors/EnemyRigidBody.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/main/Game.gd" type="Script" id=3]
+[ext_resource path="res://src/InterfaceLayer/Objects/Tile/TileMap.tscn" type="PackedScene" id=4]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="TileMap" parent="." instance=ExtResource( 4 )]
+
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 395.943, -14.8571 )
-gravity_scale = 0.0
-contact_monitor = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, -0.742874 )
 [connection signal="body_entered" from="Enemy" to="Enemy" method="_on_RigidBody2D2_body_entered"]
 [connection signal="playerDies" from="Enemy" to="." method="_on_Enemy_playerDies"]
+[connection signal="playerDead" from="Player" to="." method="_on_Player_playerDead"]
+[connection signal="playerWins" from="Player" to="." method="_on_Player_playerWins"]

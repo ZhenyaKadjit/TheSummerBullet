@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/InterfaceLayer/HUD/GameOver.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/InterfaceLayer/HUD/HUD.gd" type="Script" id=2]
 [ext_resource path="res://res/assets/backgrounds/pixel-512x512.png" type="Texture" id=3]
+[ext_resource path="res://src/InterfaceLayer/HUD/Win.tscn" type="PackedScene" id=4]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -52,5 +53,8 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Win" parent="." instance=ExtResource( 4 )]
 [connection signal="showMenu" from="GameOver" to="." method="_on_GameOver_showMenu"]
 [connection signal="pressed" from="Menu/Button" to="." method="_on_Button_pressed"]
+[connection signal="win" from="Win" to="." method="_on_Win_win"]

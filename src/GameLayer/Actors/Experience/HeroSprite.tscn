@@ -3,10 +3,6 @@
 [ext_resource path="res://src/GameLayer/Actors/Experience/HeroSprite.gd" type="Script" id=1]
 [ext_resource path="res://res/assets/stand.png" type="Texture" id=2]
 
-
-
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "Stand"
 tracks/0/type = "value"

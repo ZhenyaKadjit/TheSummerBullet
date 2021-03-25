@@ -1,5 +1,6 @@
 class_name Bullet
 extends RigidBody2D
+signal enemyDies
 
 onready var animation_player = $AnimationPlayer
 
@@ -11,8 +12,9 @@ func _on_Bullet_body_entered(body):
 	print("entered!")
 	print(body)
 	if body is Enemy:
-		body.destroy()
+		body.queue_free()
 		print("enemy destroyed!")
+		emit_signal("enemyDies")
 	queue_free()
 
 

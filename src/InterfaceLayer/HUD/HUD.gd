@@ -12,6 +12,7 @@ func _start():
 func show_menu():
 	$Menu.show()
 	$GameOver.hide()
+	$Win.hide()
 
 func _on_Button_pressed():
 	print("start?")
@@ -23,3 +24,9 @@ func game_over():
 
 func _on_GameOver_showMenu():
 	show_menu()
+
+func _on_Win_win():
+	show_menu()
+
+func show_win():
+	$Win.show()

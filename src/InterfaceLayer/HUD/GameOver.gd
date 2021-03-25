@@ -24,10 +24,8 @@ func show_blood_wall():
 	$AnimatedSprite.animation = "blood_wall"
 	$AnimatedSprite.play()
 
-
 func _on_AnimatedSprite_animation_finished():
 	$TouchScreenButton.show()
-
 
 func _on_TouchScreenButton_pressed():
 	emit_signal("showMenu")

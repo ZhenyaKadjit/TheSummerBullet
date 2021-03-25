@@ -1,0 +1,41 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://res/assets/backgrounds/PlantGrows5.png" type="Texture" id=1]
+[ext_resource path="res://res/assets/backgrounds/PlantGrows4.png" type="Texture" id=2]
+[ext_resource path="res://res/assets/backgrounds/PlantGrows3.png" type="Texture" id=3]
+[ext_resource path="res://res/assets/backgrounds/PlantGrows2.png" type="Texture" id=4]
+[ext_resource path="res://res/assets/backgrounds/PlantGrows1.png" type="Texture" id=5]
+[ext_resource path="res://res/assets/backgrounds/PlantGrows9.png" type="Texture" id=6]
+[ext_resource path="res://res/assets/backgrounds/PlantGrows6.png" type="Texture" id=7]
+[ext_resource path="res://res/assets/backgrounds/PlantGrows7.png" type="Texture" id=8]
+[ext_resource path="res://res/assets/backgrounds/PlantGrows10.png" type="Texture" id=9]
+[ext_resource path="res://res/assets/backgrounds/PlantGrows8.png" type="Texture" id=10]
+[ext_resource path="res://src/InterfaceLayer/HUD/Win.gd" type="Script" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "plantGrows",
+"speed": 5.0
+} ]
+
+[node name="Win" type="CanvasLayer"]
+script = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 504.952, 318.917 )
+scale = Vector2( 4.26668, 2.62411 )
+frames = SubResource( 1 )
+animation = "plantGrows"
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 185.0
+text = "YOU WIN!"
+align = 1
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

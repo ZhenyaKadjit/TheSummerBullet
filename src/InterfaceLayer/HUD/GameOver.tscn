@@ -21,6 +21,7 @@ animations = [ {
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]
+visible = false
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -42,6 +43,7 @@ shape = SubResource( 1 )
 passby_press = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( 511.413, 302.185 )
 scale = Vector2( 3.99854, 2.35769 )
 frames = SubResource( 2 )
